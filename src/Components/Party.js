@@ -25,7 +25,7 @@ export default class Party extends Component {
     return (
       <section>
         {this.state.characters.map((e, i) => {
-          return <Character key={i} info={e} />;
+          return <Character key={i} charInfo={e} />;
         })}
       </section>
     );

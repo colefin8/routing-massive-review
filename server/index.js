@@ -8,8 +8,19 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env;
 app.use(express.json());
 
 //* massive goes below
-
-
+massive({
+  connectionString: CONNECTION_STRING,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+})
+  .then((db) => {
+    app.set("db", db);
+    console.log("database connected");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 //* Endpoints go below
 

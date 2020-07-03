@@ -1,0 +1,1 @@
+SELECT * FROM party WHERE character_id = $1;
